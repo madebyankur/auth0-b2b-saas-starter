@@ -1,20 +1,13 @@
 "use client"
 
-import { toast } from "sonner"
+import { toast } from 'sonner';
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { SubmitButton } from "@/components/submit-button"
+import { SubmitButton } from '@/components/submit-button';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 
-import { updateDisplayName } from "./actions"
+import { updateDisplayName } from './actions';
 
 interface Props {
   organization: {

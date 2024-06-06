@@ -1,10 +1,11 @@
-import { appClient, managementClient } from "@/lib/auth0"
-import { Role } from "@/lib/roles"
-import { Separator } from "@/components/ui/separator"
+import { PageHeader } from '@/components/page-header';
+import { Separator } from '@/components/ui/separator';
+import { appClient, managementClient } from '@/lib/auth0';
+import { Role } from '@/lib/roles';
 
-import { CreateInvitationForm } from "./create-invitation-form"
-import { InvitationsList } from "./invitations-list"
-import { MembersList } from "./members-list"
+import { CreateInvitationForm } from './create-invitation-form';
+import { InvitationsList } from './invitations-list';
+import { MembersList } from './members-list';
 
 export default async function Members() {
   const session = await appClient.getSession()
@@ -20,14 +21,10 @@ export default async function Members() {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h3 className="text-lg font-medium">Organization Members</h3>
-        <p className="text-sm text-muted-foreground">
-          Manage the members of the organization.
-        </p>
-      </div>
-
-      <Separator />
+      <PageHeader
+        title="Members"
+        description="Manage the members of the organization."
+      />
 
       <MembersList
         members={members.map((m) => ({

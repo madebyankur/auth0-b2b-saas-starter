@@ -1,8 +1,7 @@
 "use client"
 
-import * as React from "react"
 import { useState } from "react"
-import { useRouter } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 import {
   CaretSortIcon,
   CheckIcon,
@@ -45,6 +44,7 @@ export function OrganizationSwitcher({
 }: AccountSwitcherProps) {
   const [open, setOpen] = useState(false)
   const router = useRouter()
+  const pathname = usePathname()
 
   const organization = organizations.find((org) => org.id === currentOrgId)!
 
@@ -56,22 +56,27 @@ export function OrganizationSwitcher({
           role="combobox"
           aria-expanded={open}
           aria-label="Select an organization"
-          className="w-full justify-between"
+          className={cn(
+            "h-12 w-full justify-between rounded-xl border border-border bg-white p-2",
+            "hover:border-stone-200 hover:bg-white"
+          )}
         >
-          <Avatar className="mr-2 size-5 rounded-sm">
+          <Avatar className="mr-2 size-8 rounded-sm">
             <AvatarImage
               src={organization.logoUrl}
               alt={organization.displayName}
             />
-            <AvatarFallback className="rounded-sm">
+            <AvatarFallback className="rounded-sm bg-lime-200 text-lime-700">
               {organization.displayName[0].toUpperCase()}
             </AvatarFallback>
           </Avatar>
-          <span className="truncate">{organization.displayName}</span>
+          <span className="min-w-32 truncate text-left">
+            {organization.displayName}
+          </span>
           <CaretSortIcon className="ml-auto h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[240px] p-0">
+      <PopoverContent className="w-[240px] p-0" align="start">
         <Command>
           <CommandList>
             <CommandInput placeholder="Search organizations..." />
@@ -83,13 +88,13 @@ export function OrganizationSwitcher({
                   key={org.id}
                   onSelect={() => {
                     router.push(
-                      `/api/auth/login?organization=${org.id}&returnTo=/dashboard`
+                      `/api/auth/login?organization=${org.id}&returnTo=${pathname}`
                     )
                     setOpen(false)
                   }}
-                  className="text-sm"
+                  className={cn("text-sm")}
                 >
-                  <Avatar className="mr-2 size-5 rounded-sm">
+                  <Avatar className="mr-2 size-8 rounded-sm">
                     <AvatarImage src={org.logoUrl} alt={org.displayName} />
                     <AvatarFallback className="rounded-sm">
                       {org.displayName[0].toUpperCase()}
@@ -116,6 +121,7 @@ export function OrganizationSwitcher({
                   router.push("/onboarding/create")
                   setOpen(false)
                 }}
+                className="cursor-pointer"
               >
                 <PlusCircledIcon className="mr-2 size-4" />
                 Create Organization

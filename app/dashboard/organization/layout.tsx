@@ -1,21 +1,15 @@
-import Link from "next/link"
-import { redirect } from "next/navigation"
-import { ArrowLeftIcon } from "@radix-ui/react-icons"
+import Link from 'next/link';
+import { redirect } from 'next/navigation';
 
-import { appClient, managementClient } from "@/lib/auth0"
-import { getRole } from "@/lib/roles"
-import { Button } from "@/components/ui/button"
-import {
-  Card,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { Separator } from "@/components/ui/separator"
-import { Auth0Logo } from "@/components/auth0-logo"
-import { OrganizationSwitcher } from "@/components/organization-switcher"
-import { SidebarNav } from "@/components/sidebar-nav"
+import { Auth0Logo } from '@/components/auth0-logo';
+import { OrganizationSwitcher } from '@/components/organization-switcher';
+import { SidebarNav } from '@/components/sidebar-nav';
+import { Button } from '@/components/ui/button';
+import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Separator } from '@/components/ui/separator';
+import { appClient, managementClient } from '@/lib/auth0';
+import { getRole } from '@/lib/roles';
+import { ArrowLeftIcon } from '@radix-ui/react-icons';
 
 interface AccountLayoutProps {
   children: React.ReactNode
@@ -86,8 +80,8 @@ export default async function AccountLayout({ children }: AccountLayoutProps) {
   }
 
   return (
-    <div className="wrapper flex">
-      <aside className="flex flex-col p-8 lg:w-1/5">
+    <div className="wrapper flex gap-2">
+      <aside className="flex flex-col py-8 pl-8 lg:w-1/5">
         <div className="flex items-center gap-2 pb-8">
           <Link href="/dashboard">
             <Auth0Logo className="size-5" />
@@ -116,7 +110,10 @@ export default async function AccountLayout({ children }: AccountLayoutProps) {
           <Link href="/api/auth/logout">Log Out</Link>
         </div>
       </aside>
-      <div className="workspace p-8 lg:w-4/5">
+      <div
+        className="m-1 rounded-2xl border border-border bg-white p-8 shadow-sm lg:w-4/5"
+        id="workspace"
+      >
         <nav className="mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-6"></div>
@@ -124,7 +121,7 @@ export default async function AccountLayout({ children }: AccountLayoutProps) {
 
           <div className="flex items-center space-x-4"></div>
         </nav>
-        <div className="flex-1">{children}</div>
+        <div className="mx-auto max-w-6xl flex-1 py-12">{children}</div>
       </div>
     </div>
   )
