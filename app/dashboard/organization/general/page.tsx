@@ -1,8 +1,7 @@
-import { PageHeader } from '@/components/page-header';
-import { Separator } from '@/components/ui/separator';
-import { appClient, managementClient } from '@/lib/auth0';
+import { appClient, managementClient } from "@/lib/auth0"
+import { PageHeader } from "@/components/page-header"
 
-import { DisplayNameForm } from './display-name-form';
+import { DisplayNameForm } from "./display-name-form"
 
 export default async function GeneralSettings() {
   const session = await appClient.getSession()

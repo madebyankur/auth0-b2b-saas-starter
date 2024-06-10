@@ -57,8 +57,8 @@ export function OrganizationSwitcher({
           aria-expanded={open}
           aria-label="Select an organization"
           className={cn(
-            "h-12 w-full justify-between rounded-xl border border-border bg-white p-2",
-            "hover:border-stone-200 hover:bg-white"
+            "bg-field flex h-12 w-full justify-between rounded-xl border border-border p-2",
+            "hover:border-accent hover:bg-input"
           )}
         >
           <Avatar className="mr-2 size-8 rounded-sm">
@@ -66,11 +66,11 @@ export function OrganizationSwitcher({
               src={organization.logoUrl}
               alt={organization.displayName}
             />
-            <AvatarFallback className="rounded-sm bg-lime-200 text-lime-700">
+            <AvatarFallback className="rounded-sm">
               {organization.displayName[0].toUpperCase()}
             </AvatarFallback>
           </Avatar>
-          <span className="min-w-32 truncate text-left">
+          <span className="min-w-16 truncate text-left">
             {organization.displayName}
           </span>
           <CaretSortIcon className="ml-auto h-4 w-4 shrink-0 opacity-50" />

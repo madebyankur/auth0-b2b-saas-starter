@@ -28,17 +28,6 @@ export default async function AccountLayout({ children }: AccountLayoutProps) {
     <div className="p-8">
       <div className="flex flex-col space-y-8 lg:flex-row lg:space-x-12 lg:space-y-0">
         <aside className="lg:w-1/5">
-          <div className="flex items-center gap-2 pb-8">
-            <Link href="/dashboard">
-              <Auth0Logo className="size-5" />
-            </Link>
-            <Link
-              href="/dashboard"
-              className="text-lg font-medium transition-colors hover:text-muted-foreground"
-            >
-              SaaStart
-            </Link>
-          </div>
           <OrganizationSwitcher
             className="flex"
             organizations={orgs.map((o) => ({
@@ -52,7 +41,12 @@ export default async function AccountLayout({ children }: AccountLayoutProps) {
           <Separator orientation="horizontal" className="my-4" />
           <SidebarNav items={sidebarNavItems} />
         </aside>
-        <div className="flex-1">{children}</div>
+        <div
+          className="bg-field m-1 rounded-2xl border border-border px-8 py-16 shadow-sm lg:w-4/5"
+          id="profile"
+        >
+          <div className="mx-auto max-w-6xl flex-1 py-12">{children}</div>
+        </div>
       </div>
     </div>
   )

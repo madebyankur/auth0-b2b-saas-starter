@@ -1,5 +1,6 @@
 import { appClient } from "@/lib/auth0"
 import { Separator } from "@/components/ui/separator"
+import { PageHeader } from "@/components/page-header"
 
 import { DisplayNameForm } from "./display-name-form"
 
@@ -9,14 +10,10 @@ export default appClient.withPageAuthRequired(
 
     return (
       <div className="space-y-6">
-        <div>
-          <h3 className="text-lg font-medium">Profile</h3>
-          <p className="text-sm text-muted-foreground">
-            Manage your personal information.
-          </p>
-        </div>
-
-        <Separator />
+        <PageHeader
+          title="Profile"
+          description="Manage your personal information."
+        />
 
         <DisplayNameForm displayName={session?.user.name} />
       </div>
