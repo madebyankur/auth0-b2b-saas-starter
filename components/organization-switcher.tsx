@@ -57,8 +57,8 @@ export function OrganizationSwitcher({
           aria-expanded={open}
           aria-label="Select an organization"
           className={cn(
-            "bg-field flex h-12 w-full justify-between rounded-xl border border-border p-2",
-            "hover:border-accent hover:bg-input"
+            "flex h-12 w-full min-w-[240px] justify-between rounded-xl border border-border bg-field p-2",
+            "hover:border-accent hover:bg-accent/15"
           )}
         >
           <Avatar className="mr-2 size-8 rounded-sm">

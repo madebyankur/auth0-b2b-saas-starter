@@ -1,9 +1,8 @@
-import { PageHeader } from '@/components/page-header';
-import { Separator } from '@/components/ui/separator';
-import { appClient, managementClient } from '@/lib/auth0';
+import { appClient, managementClient } from "@/lib/auth0"
+import { PageHeader } from "@/components/page-header"
 
-import { DEFAULT_MFA_POLICY } from './mfa-policy';
-import { MfaPolicyForm } from './mfa-policy-form';
+import { DEFAULT_MFA_POLICY } from "./mfa-policy"
+import { MfaPolicyForm } from "./mfa-policy-form"
 
 export default async function SecurityPolicies() {
   const session = await appClient.getSession()

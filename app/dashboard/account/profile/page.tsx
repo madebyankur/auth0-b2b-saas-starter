@@ -1,5 +1,4 @@
 import { appClient } from "@/lib/auth0"
-import { Separator } from "@/components/ui/separator"
 import { PageHeader } from "@/components/page-header"
 
 import { DisplayNameForm } from "./display-name-form"

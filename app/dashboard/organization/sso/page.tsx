@@ -1,8 +1,7 @@
-import { PageHeader } from '@/components/page-header';
-import { Separator } from '@/components/ui/separator';
-import { appClient, managementClient } from '@/lib/auth0';
+import { appClient, managementClient } from "@/lib/auth0"
+import { PageHeader } from "@/components/page-header"
 
-import { ConnectionsList } from './connections-list';
+import { ConnectionsList } from "./connections-list"
 
 export default async function SSO() {
   const session = await appClient.getSession()

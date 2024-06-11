@@ -1,11 +1,10 @@
-import { PageHeader } from '@/components/page-header';
-import { Separator } from '@/components/ui/separator';
-import { appClient, managementClient } from '@/lib/auth0';
-import { Role } from '@/lib/roles';
+import { appClient, managementClient } from "@/lib/auth0"
+import { Role } from "@/lib/roles"
+import { PageHeader } from "@/components/page-header"
 
-import { CreateInvitationForm } from './create-invitation-form';
-import { InvitationsList } from './invitations-list';
-import { MembersList } from './members-list';
+import { CreateInvitationForm } from "./create-invitation-form"
+import { InvitationsList } from "./invitations-list"
+import { MembersList } from "./members-list"
 
 export default async function Members() {
   const session = await appClient.getSession()
