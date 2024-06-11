@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { usePathname, useRouter } from "next/navigation"
+import { useRouter } from "next/navigation"
 import {
   CaretSortIcon,
   CheckIcon,
@@ -44,7 +44,6 @@ export function OrganizationSwitcher({
 }: AccountSwitcherProps) {
   const [open, setOpen] = useState(false)
   const router = useRouter()
-  const pathname = usePathname()
 
   const organization = organizations.find((org) => org.id === currentOrgId)!
 
@@ -88,7 +87,7 @@ export function OrganizationSwitcher({
                   key={org.id}
                   onSelect={() => {
                     router.push(
-                      `/api/auth/login?organization=${org.id}&returnTo=${pathname}`
+                      `/api/auth/login?organization=${org.id}&returnTo=/dashboard`
                     )
                     setOpen(false)
                   }}

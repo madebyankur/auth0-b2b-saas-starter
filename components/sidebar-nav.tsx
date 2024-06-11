@@ -30,7 +30,7 @@ export function SidebarNav({ className, items, ...props }: SidebarNavProps) {
           href={item.href}
           className={cn(
             buttonVariants({ variant: "ghost" }),
-            pathname === item.href && "bg-accent",
+            pathname.includes(item.href) && "bg-accent",
             "hover:bg-muted",
             "justify-start"
           )}

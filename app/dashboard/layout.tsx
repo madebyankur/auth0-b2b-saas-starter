@@ -18,14 +18,14 @@ export default async function DashboardLayout({
 }>) {
   const session = await appClient.getSession()
 
-  const { data: orgs } = await managementClient.users.getUserOrganizations({
-    id: session!.user.sub,
-  })
-
   // if the user is not authenticated, redirect to login
   if (!session?.user) {
     redirect("/api/auth/login")
   }
+
+  const { data: orgs } = await managementClient.users.getUserOrganizations({
+    id: session!.user.sub,
+  })
 
   return (
     <UserProvider>
@@ -60,7 +60,7 @@ export default async function DashboardLayout({
         <div className="flex flex-row gap-x-4">
           <Button variant="ghost" asChild className="px-2 py-2">
             <Link href="/dashboard/organization/general">
-              <SettingsIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+              <SettingsIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />
             </Link>
           </Button>
           <UserNav />
