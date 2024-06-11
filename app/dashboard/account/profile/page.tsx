@@ -8,7 +8,7 @@ export default appClient.withPageAuthRequired(
     const session = await appClient.getSession()
 
     return (
-      <div className="space-y-6">
+      <div className="space-y-1">
         <PageHeader
           title="Profile"
           description="Manage your personal information."

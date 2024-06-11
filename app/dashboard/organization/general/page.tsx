@@ -10,7 +10,7 @@ export default async function GeneralSettings() {
   })
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-1">
       <PageHeader
         title="General Settings"
         description="Update your organization's general settings."

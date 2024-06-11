@@ -19,7 +19,7 @@ export default async function Members() {
     })
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-1">
       <PageHeader
         title="Members"
         description="Manage the members of the organization."
