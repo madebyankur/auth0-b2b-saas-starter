@@ -11,7 +11,7 @@ interface AppBreadcrumbProps {
 
 export const AppBreadcrumb = ({ href, title }: AppBreadcrumbProps) => {
   return (
-    <Button variant="ghost" asChild>
+    <Button variant="link" asChild>
       <Link
         href={href}
         className={cn(

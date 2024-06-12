@@ -11,7 +11,7 @@ export default async function SSO() {
     })
 
   return (
-    <div className="space-y-1">
+    <div className="space-y-2">
       <PageHeader
         title="Single Sign-On"
         description="Configure SSO for your organization."

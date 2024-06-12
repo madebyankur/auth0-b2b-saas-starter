@@ -67,11 +67,9 @@ export default async function DashboardLayout({
         </div>
       </nav>
 
-      <main className="mx-auto grid min-h-[calc(100svh-153px)] max-w-7xl px-2 py-6 sm:px-6 lg:px-8">
+      <main className="mx-auto grid min-h-[calc(100svh-164px)] max-w-7xl px-2 py-6 sm:px-6 lg:px-8">
         {children}
       </main>
-
-      <Separator />
 
       <footer className="mx-auto max-w-7xl px-2 py-6 sm:px-6 lg:px-8">
         <div className="flex justify-between">

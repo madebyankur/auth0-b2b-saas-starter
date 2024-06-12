@@ -82,7 +82,7 @@ export default async function AccountLayout({ children }: AccountLayoutProps) {
           <SidebarNav items={sidebarNavItems} />
         </aside>
         <div
-          className="rounded-2xl border border-border bg-field p-1 shadow-sm lg:w-4/5"
+          className="rounded-2xl border border-border bg-field p-2 shadow-sm lg:w-4/5"
           id="workspace"
         >
           <div className="mx-auto max-w-6xl">{children}</div>

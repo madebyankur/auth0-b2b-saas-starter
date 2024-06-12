@@ -17,7 +17,7 @@ export default async function CreateSamlConnection() {
 
   return (
     <div className="space-y-1">
-      <div className="p-4">
+      <div className="px-2 py-3">
         <AppBreadcrumb
           title="Back to connections"
           href="/dashboard/organization/sso"

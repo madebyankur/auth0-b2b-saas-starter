@@ -11,7 +11,7 @@ export default async function SecurityPolicies() {
   })
 
   return (
-    <div className="space-y-1">
+    <div className="space-y-2">
       <PageHeader
         title="Security Policies"
         description="Manage the security policies of your organization."
