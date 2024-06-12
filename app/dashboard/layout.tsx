@@ -5,7 +5,6 @@ import { SettingsIcon } from "lucide-react"
 
 import { appClient, managementClient } from "@/lib/auth0"
 import { Button } from "@/components/ui/button"
-import { Separator } from "@/components/ui/separator"
 import { Auth0Logo } from "@/components/auth0-logo"
 import { ModeToggle } from "@/components/mode-toggle"
 import { OrganizationSwitcher } from "@/components/organization-switcher"
@@ -29,26 +28,24 @@ export default async function DashboardLayout({
 
   return (
     <UserProvider>
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <div className="flex items-center space-x-4">
-          <div className="flex items-center space-x-6">
-            <OrganizationSwitcher
-              organizations={orgs.map((o) => ({
-                id: o.id,
-                slug: o.name,
-                displayName: o.display_name!,
-                logoUrl: o.branding?.logo_url,
-              }))}
-              currentOrgId={session.user.org_id}
-            />
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-2 py-4 sm:px-8">
+        <div className="flex items-center space-x-6">
+          <OrganizationSwitcher
+            organizations={orgs.map((o) => ({
+              id: o.id,
+              slug: o.name,
+              displayName: o.display_name!,
+              logoUrl: o.branding?.logo_url,
+            }))}
+            currentOrgId={session.user.org_id}
+          />
 
-            <Link
-              href="/dashboard"
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-            >
-              Home
-            </Link>
-          </div>
+          <Link
+            href="/dashboard"
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+          >
+            Home
+          </Link>
         </div>
 
         <div className="flex flex-row gap-x-4">
@@ -61,7 +58,7 @@ export default async function DashboardLayout({
         </div>
       </nav>
 
-      <main className="mx-auto grid min-h-[calc(100svh-164px)] max-w-7xl px-2 sm:px-6 lg:px-8 lg:py-6">
+      <main className="mx-auto grid min-h-[calc(100svh-164px)] max-w-7xl px-2 sm:px-8 lg:py-6">
         {children}
       </main>
 
