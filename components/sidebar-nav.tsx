@@ -19,7 +19,7 @@ export function SidebarNav({ className, items, ...props }: SidebarNavProps) {
   return (
     <nav
       className={cn(
-        "flex min-h-full space-x-2 rounded-2xl border border-muted bg-muted/50 p-2 shadow-[inset_0_2px_2px_-1px_rgba(0,0,0,0.12)] lg:flex-col lg:space-x-0 lg:space-y-1",
+        "ml-0 mt-8 flex min-h-full space-x-2 lg:-ml-4 lg:flex-col lg:space-x-0 lg:space-y-1",
         className
       )}
       {...props}
@@ -30,7 +30,7 @@ export function SidebarNav({ className, items, ...props }: SidebarNavProps) {
           href={item.href}
           className={cn(
             buttonVariants({ variant: "ghost" }),
-            pathname.includes(item.href) && "bg-accent",
+            pathname.includes(item.href) && "text-accent-foreground",
             "hover:bg-muted",
             "justify-start"
           )}

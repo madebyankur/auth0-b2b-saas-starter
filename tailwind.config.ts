@@ -25,6 +25,7 @@ const config = {
       },
       colors: {
         field: "hsl(var(--field))",
+        hover: "hsl(var(--hover))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

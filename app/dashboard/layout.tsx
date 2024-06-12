@@ -24,7 +24,7 @@ export default async function DashboardLayout({
   }
 
   const { data: orgs } = await managementClient.users.getUserOrganizations({
-    id: session!.user.sub,
+    id: session.user.sub,
   })
 
   return (
@@ -32,12 +32,6 @@ export default async function DashboardLayout({
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <div className="flex items-center space-x-4">
           <div className="flex items-center space-x-6">
-            <Link href="/dashboard">
-              <Auth0Logo className="size-9" />
-            </Link>
-
-            <Separator orientation="vertical" className="h-8" />
-
             <OrganizationSwitcher
               organizations={orgs.map((o) => ({
                 id: o.id,
@@ -60,20 +54,22 @@ export default async function DashboardLayout({
         <div className="flex flex-row gap-x-4">
           <Button variant="ghost" asChild className="px-2 py-2">
             <Link href="/dashboard/organization/general">
-              <SettingsIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />
+              <SettingsIcon className="h-[1.2rem] w-[1.2rem]" />
             </Link>
           </Button>
           <UserNav />
         </div>
       </nav>
 
-      <main className="mx-auto grid min-h-[calc(100svh-164px)] max-w-7xl px-2 py-6 sm:px-6 lg:px-8">
+      <main className="mx-auto grid min-h-[calc(100svh-164px)] max-w-7xl px-2 sm:px-6 lg:px-8 lg:py-6">
         {children}
       </main>
 
       <footer className="mx-auto max-w-7xl px-2 py-6 sm:px-6 lg:px-8">
         <div className="flex justify-between">
           <div className="flex items-center space-x-2">
+            <Auth0Logo className="h-6 w-6" />
+
             <div className="font-mono font-semibold">
               <Link href="/">SaaStart</Link>
             </div>

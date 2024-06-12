@@ -118,7 +118,7 @@ export function UpdateOidcConnectionForm({
                 />
                 <Label
                   htmlFor="front_channel"
-                  className="flex h-full rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+                  className="hover:bg-hover flex h-full rounded-md border-2 border-muted bg-popover p-4 hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
                 >
                   <div className="space-y-1.5">
                     <div>Front Channel</div>
@@ -138,7 +138,7 @@ export function UpdateOidcConnectionForm({
                 />
                 <Label
                   htmlFor="back_channel"
-                  className="flex h-full rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+                  className="hover:bg-hover flex h-full rounded-md border-2 border-muted bg-popover p-4 hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
                 >
                   <div className="space-y-1.5">
                     <div>Back Channel</div>

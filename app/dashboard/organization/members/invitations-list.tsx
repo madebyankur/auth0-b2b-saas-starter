@@ -19,6 +19,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { Separator } from "@/components/ui/separator"
 import {
   Table,
   TableBody,
@@ -47,11 +48,12 @@ interface Props {
 export function InvitationsList({ invitations }: Props) {
   return (
     <Card>
-      <CardHeader>
+      <CardHeader className="space-y-4">
         <CardTitle>Pending Invitations</CardTitle>
         <CardDescription>
           Invitations that have been sent out but have not yet been redeemed.
         </CardDescription>
+        <Separator />
       </CardHeader>
       <CardContent>
         <Table>
