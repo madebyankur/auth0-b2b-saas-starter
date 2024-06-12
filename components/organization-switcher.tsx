@@ -75,7 +75,7 @@ export function OrganizationSwitcher({
           <CaretSortIcon className="ml-auto h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[240px] rounded-xl p-0" align="start">
+      <PopoverContent className="w-[240px] rounded-xl p-0">
         <Command>
           <CommandList>
             <CommandInput placeholder="Search organizations..." />
@@ -91,7 +91,7 @@ export function OrganizationSwitcher({
                     )
                     setOpen(false)
                   }}
-                  className={cn("text-sm")}
+                  className="text-sm"
                 >
                   <Avatar className="mr-2 size-8 rounded-sm">
                     <AvatarImage src={org.logoUrl} alt={org.displayName} />
