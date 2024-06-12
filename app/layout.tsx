@@ -33,7 +33,7 @@ export default async function RootLayout({
           {children}
         </ThemeProvider>
 
-        <Toaster />
+        <Toaster position="bottom-right" />
       </body>
     </html>
   )
