@@ -21,7 +21,7 @@ const config = {
     extend: {
       fontFamily: {
         sans: ["var(--font-inter-sans)", ...fontFamily.sans],
-        mono: ["var(--font-inter-mono)", ...fontFamily.mono],
+        mono: [...fontFamily.mono],
       },
       colors: {
         field: "hsl(var(--field))",
