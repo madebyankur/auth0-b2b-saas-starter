@@ -48,12 +48,11 @@ interface Props {
 export function InvitationsList({ invitations }: Props) {
   return (
     <Card>
-      <CardHeader className="space-y-4">
+      <CardHeader>
         <CardTitle>Pending Invitations</CardTitle>
         <CardDescription>
           Invitations that have been sent out but have not yet been redeemed.
         </CardDescription>
-        <Separator />
       </CardHeader>
       <CardContent>
         <Table>
